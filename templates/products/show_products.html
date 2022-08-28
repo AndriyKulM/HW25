@@ -5,17 +5,19 @@
     <div class="col-8">
         <div class="card-group">
           {% for product in products %}
-          <div class="card text-center">
+          <div class="d-inline-flex p-2">
+            <div class="card text-center" style="width: 18rem;">
               <div class="card-header">
-                  {{ product.category.category_name }}
+                    {{ product.categories.category_name }}
               </div>
               <div class="card-body">
                 <h5 class="card-title">{{ product.title }}</h5>
-                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text">{{ product.description|truncatechars:80 }}</p>
               </div>
               <div class="card-footer text-muted">
                   {{ product.approved_by.username }}
               </div>
+            </div>
           </div>
           {% endfor %}
         </div>

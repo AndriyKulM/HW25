@@ -1,8 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import MenuItem
 from products.models import Product
-from django.db.models import Q
 
 
 def home(request):

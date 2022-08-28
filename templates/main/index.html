@@ -3,16 +3,18 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <h1>Learning Products</h1>
+            <h1 class="text-center">Learning Products</h1>
             <div class="cards-list">
                 {% for product in products %}
+                <div class="d-inline-flex p-2">
                     <div class="card" style="width: 18rem;">
                       <div class="card-body">
                         <h5 class="card-title">{{ product.title }}</h5>
-                        <p class="card-text">{{ product.description }}</p>
+                        <p class="card-text">{{ product.description|truncatechars:80 }}</p>
                         <a href="{% url 'product_details' id=product.id %}" class="card-link">Details</a>
                       </div>
                     </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
